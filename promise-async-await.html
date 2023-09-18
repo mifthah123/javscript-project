@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function functionOne(){
+            return new Promise((res,rej)=>{
+                setTimeout(()=>{
+                    let name = 'Mifthah'
+                    res(name)
+                },3000)
+            })
+        }
+
+        function functionTwo(){
+            return new Promise((res,rej)=>{
+                setTimeout(()=>{
+                    let age=24
+                    res(age)
+                },3000)
+            })
+        }
+
+        //promise method for asynchronous execution
+
+        // Promise.all([functionOne(),functionTwo()]).then((result)=>{
+        //     console.log(result);
+        // })
+
+        //asyn await method for asynchronous execution
+
+        async function displays(){
+            let name= await functionOne()
+            console.log(name);
+            let age = await functionTwo()
+            console.log(age);
+        }
+        displays()
+    </script>
+</body>
+</html>
